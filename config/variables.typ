@@ -1,0 +1,16 @@
+// All reusable variables here
+#let myLang = "it"
+#let myName = "Riccardo Toniolo"
+#let myMatricola = "2042332"
+#let myTitle = "Predizione della Profondità con Deep Learning da Immagini di Telecamera Monoculare"
+#let myDegree = "Tesi di laurea"
+#let myUni = "Università degli studi di Padova"
+#let myDepartment = "Dipartimento di Matematica ''Tullio Levi-Civita''"
+#let myFaculty = "Corso di Laurea in Informatica"
+#let profTitle = "Prof. "
+#let myProf = "Lamberto Ballan"
+#let myCompany = "VIMP Group, " + myUni
+#let myTutor = "Nicolò Navarin"
+#let myLocation = "Padova"
+#let myAA = "2023-2024"
+#let myTime = "Settembre 2024" 
