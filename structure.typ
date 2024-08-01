@@ -9,14 +9,9 @@
 // Mainmatter
 
 #counter(page).update(1)
+#show link: set text(fill: blue.darken(60%), weight: "semibold")
 
 #include "./chapters/introduction.typ"
-#include "./chapters/process.typ"
-#include "./chapters/stage-description.typ"
-#include "./chapters/requirements.typ"
-#include "./chapters/product-design.typ"
-#include "./chapters/product-testing.typ"
-#include "./chapters/conclusion.typ"
 
 // // Glossario
 #include "./appendix/glossary.typ"
