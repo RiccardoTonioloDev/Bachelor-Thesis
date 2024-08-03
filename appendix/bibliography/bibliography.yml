@@ -22,3 +22,39 @@ PyDNetV2:
         ]
     publisher: IEEE Transactions on Intelligent Transportation Systems
     date: 2022
+MDEInWild:
+    type: Article
+    title: Real-time single image depth perception in the wild with handheld devices
+    author:
+        [
+            'Aleotti, Filippo',
+            'Zaccaroni, Giulio',
+            'Bartolomei, Luca',
+            'Poggi, Matteo',
+            'Tosi, Fabio',
+            'Mattoccia, Stefano',
+        ]
+    volume: 21
+    date: 2021
+    Parent:
+        title: Sensors
+        volume: 21
+monodepth:
+    type: Article
+    title: Real-time Self-Supervised Monocular Depth Estimation Without GPU
+    author:
+        [
+            'Clément Godard',
+            'Oisin Mac Aodha',
+            'Michael Firman',
+            'Gabriel J. Brostow',
+        ]
+    publisher: CVPR
+    date: 2017
+eigen:
+    type: Article
+    title: Depth Map Prediction from a Single Image using a Multi-Scale Deep Network
+    author: ['David, Eigen', 'Christian, Puhrsch', 'Rob, Fergus']
+    publisher: Advances in neural information processing systems
+    page: 2366-2374
+    date: 2014

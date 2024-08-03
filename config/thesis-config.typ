@@ -11,7 +11,7 @@
     show math.equation: set text(weight: 400)
 
     // LaTeX look (secondo la doc di Typst)
-    set page(margin: 1.75in, numbering: myNumbering, number-align: center)
+    set page(margin: 1.1811in, numbering: myNumbering, number-align: center)
     // set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
     set par(leading: 0.55em, justify: true)
     set text(font: "New Computer Modern", size: 10pt, lang: myLang)
