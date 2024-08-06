@@ -24,5 +24,9 @@
     (key:"fmap",short:"feature map",desc:[Il risultato delle operazioni del kernel sull'immagine, rappresentando le caratteristiche rilevate come bordi e texture.]),
     (key:"adam",short:"Adam",desc:[L'Adaptive Moment Estimation è un ottimizzatore che utilizzando stime adattive del momento di primo e secondo ordine (media e varianza dei gradienti) aggiorna i pesi, migliorando la velocità e stabilità della convergenza durante l'addestramento dei modelli di apprendimento profondo.]),
     (key:"linter",short:"linter",desc:[Strumento che analizza il codice sorgente per individuare errori, bug, stile non conforme e altri problemi di qualità.]),
+    (key:"finetune",short:"fine tuning",desc:[Processo di adattamento di un modello pre-addestrato su un nuovo dataset specifico per migliorare le sue prestazioni su un compito particolare.]),
+    (key:"hadamard",short:"prodotto di Hadamard",desc:[Date due matrici dalle stesse dimensioni, la matrice risultato dell'operazione avrà le medesime dimensioni dell'input, e il valore di ogni sua cella corrisponderà al prodotto tra i valori delle celle corrispondenti nelle due matrici di input.]),
+    (key:"gh",short:"GitHub",desc: [Piattaforma di hosting per il controllo di versione e la collaborazione, basata su Git.]),
+    (key:"nlp",short:"natural language processing",desc: [Il *N*\atural *L*\anguage *P*\rocessing è un campo dell'intelligenza artificiale che si occupa dell'integrazione tra computer e linguaggio umano.]),
   )
 )

@@ -13,6 +13,10 @@
 
 #include "./chapters/introduction.typ"
 #include "./chapters/pydnet.typ"
+#include "./chapters/xinet.typ"
+#include "./chapters/attention.typ"
+#include "./chapters/pyxinet.typ"
+#include "./chapters/conclusioni.typ"
 
 // // Glossario
 #include "./appendix/glossary.typ"
