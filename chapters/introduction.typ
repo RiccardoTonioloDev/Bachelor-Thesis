@@ -1,5 +1,6 @@
 #import "@preview/glossarium:0.4.1": gls
 
+#pagebreak(to: "odd")
 = Introduzione
 
 

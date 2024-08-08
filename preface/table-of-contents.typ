@@ -1,4 +1,5 @@
 #import "../config/constants.typ": figuresList, tablesList
+#pagebreak(to: "odd")
 #set page(numbering: "i")
 
 #[
@@ -16,6 +17,7 @@
 
 #v(8em)
 
+#pagebreak(to: "odd")
 #outline(
   title: figuresList,
   target: figure.where(kind: image)
@@ -23,6 +25,7 @@
 
 #v(8em)
 
+#pagebreak(to: "odd")
 #outline(
     title: tablesList,
     target: figure.where(kind: table),

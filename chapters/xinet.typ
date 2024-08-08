@@ -1,4 +1,4 @@
-#pagebreak()
+#pagebreak(to: "odd")
 = _XiNet_ <ch:xinet>
 Il seguente capitolo parla di _XiNet_ @xinet, una rete neurale convoluzionale profonda parametrizzata orientata all'efficienza energetica per compiti relativi alla _computer vision_.
 Il _paper_ tratta in primo luogo dello _XiConv_, ovvero un blocco convoluzionale parametrizzato che combina tecniche alternative per riuscire a migliorare l'efficienza di energia, rispetto ad una tradizionale convoluzione e in secondo luogo _XiNet_, ovvero come combinare gli _XiConv_ nel miglior modo, al fine di creare ad una rete neurale profonda.
@@ -28,7 +28,7 @@ L'architettura è la seguente:
 
 La rete _XiNet_ è invece detta parametrica in quando sono in essa impostabili i seguenti parametri:
   - $beta$: è il coefficiente che controlla il compromesso tra numero di parametri e operazioni. Questo perchè, fatta eccezione del primo blocco _XiConv_ della rete, gli altri blocchi seguono la seguente formula per calcolare i propri canali di output (e di conseguenza i canali di input del blocco successivo):
-  $ C_"out"^i = 4 ceil(alpha 2^(D_i-2)(1+((beta-1)i)/N)C_"out"^0) $ 
+  $ C_"out"^i = 4 ceil(alpha 2^(D_i-2)(1+((beta-1)i)/N)C_"out"^0) $
   Dove:
    - $C_"out"^i$: rappresenta il numero dei canali di output che avrà il blocco $i$-esimo;
    - $D_i$: rappresenta il numero di volte che l'input è stato dimezzato nelle dimensioni, prima del blocco $i$-esimo;
@@ -72,5 +72,5 @@ Si è voluto quindi verificare il risultato andando a svolgere i seguenti passi:
  Il modello presentato in @topcifar è in cima alle classifiche con un'_accuracy_ del 99.61% con 11 milioni di parametri.
 
  Possiamo quindi constatare come, seppur con $tilde$3 milioni di parametri in meno, riesca ad avvicinarsi ai risultati dello stato dell'arte. Ovviamente _XiNet_ non ha lo scopo di essere migliore in termini di _accuracy_, ma di minimizzare l'impatto energetico del modello, cercando di avere performance quanto più vicine.
- 
+
  I risultati sono quindi soddisfanceti al fine di provare ad esplorare, con questo modulo, eventuali soluzioni alternative per trovare una soluzione migliore nel campo del @MDE.

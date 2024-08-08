@@ -1,6 +1,6 @@
 #import "@preview/codly:1.0.0": *
 #import "../config/functions.typ": *
-#pagebreak()
+#pagebreak(to: "odd")
 = PyDNet <ch:pydnet>
 PyDNet(*Py*\ramidal *D*\epth *Net*\work) è una famiglia di modelli composta da due versioni @PyDNetV1@PyDNetV2, che cercano di risolvere il problema della @MDE mediante un approccio non supervisionato.  con circa 2 milioni di parametri in @PyDNetV1 e circa 700.000 in @PyDNetV2.
 
@@ -114,7 +114,7 @@ Il _learning rate_ parte da $10^-4$ per il primo 60% delle epoche, e viene dimez
 #block([Infine vengono applicate, con una probabilità del 50%, le seguenti _data augmentation_:
  - Capovolgimento orizontale delle immagini;
 ],breakable: false,width: 100%)
- - Trasformazione delle immagini: 
+ - Trasformazione delle immagini:
   - Correzione gamma;
   - Correzione luminosità;
   - Sfasamento dei colori.

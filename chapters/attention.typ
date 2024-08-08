@@ -1,5 +1,5 @@
-#pagebreak()
-= _Attention_
+#pagebreak(to: "odd")
+= _Attention_ <ch:attention>
 Le reti neurali convoluzionali, sebbene funzionino particolarmente bene per essere addestrate su immagini e video, hanno un problema alla base, ovvero non sono in grado di considerare delle dipendenze a lungo raggio tra i vari _pixel_ o _patch_ del contenuto in analisi.
 Alcuni delle conseguenze che questo comporta sono:
  - Un campo ricettivo, limitato alla dimensione del @kernel;
@@ -55,7 +55,7 @@ Il _Convolutional Block Attention Module_ (_CBAM_), presentato in @CBAM è un bl
 Elementi di particolare interesse per questo modello sono:
  - La capacità di riuscire comunque, anche se non come per la _self attention_, nel catturare relazioni globali;
 ],breakable: false,width: 100%)
- - Aumentare l'efficienza computazionale poichè aggiunge, rispetto ad altri meccanismi di attenzione, solo un discreto numero di parametri alla rete. 
+ - Aumentare l'efficienza computazionale poichè aggiunge, rispetto ad altri meccanismi di attenzione, solo un discreto numero di parametri alla rete.
 
 Il blocco _CBAM_ è principalmente composto da due sotto-moduli, uno per calcolare l'attenzione sui canali, che una volta combinato mediante un @hadamard con il _residual_ dell'_input_, viene passato al modulo di attenzione spaziale.
 L'output di attenzione spaziale viene poi combinato con il _residual_ dell'_output_ del modulo di attenzione sui canali mediante un @hadamard, generando quindi l'output con l'attenzione applicata.
@@ -95,6 +95,6 @@ Questo lo rende particolarmente interessante per la famiglia delle reti convoluz
 
 Si può quindi implementare un approccio ResNet, ponendo il blocco _CBAM_ subito dopo una convoluzione, per poi sommare il suo _output_ all'_output_ della convoluzione iniziale.
 #block([
-L'architectura proposta è quindi la seguente: 
+L'architectura proposta è quindi la seguente:
 #figure(image("../images/architectures/Attention-CBAM-resnet.drawio.png",width: 200pt),caption: [Applicazione del blocco _CBAM_ con approccio _ResNet_])
 ],breakable: false,width: 100%)
