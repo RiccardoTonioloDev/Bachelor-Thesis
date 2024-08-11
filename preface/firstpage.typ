@@ -9,7 +9,7 @@
     rows: (1fr, auto, 20pt),
     // Intestazione
     [
-        #align(center, text(18pt, weight: "semibold", myUni))
+        #align(center, text(18pt, weight: "medium", myUni))
         #v(1em)
         #align(center, text(14pt, weight: "light", smallcaps(myDepartment)))
         #v(1em)
@@ -22,7 +22,7 @@
         #v(30pt)
 
         // Titolo
-        #align(center, text(18pt, hyphenate: false, weight: "semibold", myTitle))
+        #align(center, text(18pt, hyphenate: false, weight: "medium", myTitle))
         #v(10pt)
         #align(center, text(12pt, weight: "light", style: "italic", myDegree))
         #v(40pt)

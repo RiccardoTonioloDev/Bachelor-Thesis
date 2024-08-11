@@ -1,126 +1,116 @@
 PyDNetV1:
-    type: Article
-    title: Towards real-time unsupervised monocular depth estimation on CPU
-    author:
-        [
-            'Poggi, Matteo',
-            'Aleotti, Filippo',
-            'Tosi, Fabio',
-            'Mattoccia, Stefano',
-        ]
-    publisher: IEEE/JRS Conference on Intelligent Robots and Systems (IROS)
-    date: 2018
+  type: Article
+  title: Towards real-time unsupervised monocular depth estimation on CPU
+  author:
+    ["Poggi, Matteo", "Aleotti, Filippo", "Tosi, Fabio", "Mattoccia, Stefano"]
+  publisher: IEEE/JRS Conference on Intelligent Robots and Systems (IROS)
+  date: 2018
 PyDNetV2:
-    type: Article
-    title: Real-time Self-Supervised Monocular Depth Estimation Without GPU
-    author:
-        [
-            'Poggi, Matteo',
-            'Tosi, Fabio',
-            'Aleotti, Filippo',
-            'Mattoccia, Stefano',
-        ]
-    publisher: IEEE Transactions on Intelligent Transportation Systems
-    date: 2022
+  type: Article
+  title: Real-time Self-Supervised Monocular Depth Estimation Without GPU
+  author:
+    ["Poggi, Matteo", "Tosi, Fabio", "Aleotti, Filippo", "Mattoccia, Stefano"]
+  publisher: IEEE Transactions on Intelligent Transportation Systems
+  date: 2022
 MDEInWild:
-    type: Article
-    title: Real-time single image depth perception in the wild with handheld devices
-    author:
-        [
-            'Aleotti, Filippo',
-            'Zaccaroni, Giulio',
-            'Bartolomei, Luca',
-            'Poggi, Matteo',
-            'Tosi, Fabio',
-            'Mattoccia, Stefano',
-        ]
+  type: Article
+  title: Real-time single image depth perception in the wild with handheld devices
+  author:
+    [
+      "Aleotti, Filippo",
+      "Zaccaroni, Giulio",
+      "Bartolomei, Luca",
+      "Poggi, Matteo",
+      "Tosi, Fabio",
+      "Mattoccia, Stefano",
+    ]
+  volume: 21
+  date: 2021
+  Parent:
+    title: Sensors
     volume: 21
-    date: 2021
-    Parent:
-        title: Sensors
-        volume: 21
 monodepth:
-    type: Article
-    title: Real-time Self-Supervised Monocular Depth Estimation Without GPU
-    author:
-        [
-            'Clément Godard',
-            'Oisin Mac Aodha',
-            'Michael Firman',
-            'Gabriel J. Brostow',
-        ]
-    publisher: CVPR
-    date: 2017
+  type: Article
+  title: Unsupervised Monocular Depth Estimation with Left-Right Consistency
+  author:
+    [
+      "Clément Godard",
+      "Oisin Mac Aodha",
+      "Michael Firman",
+      "Gabriel J. Brostow",
+    ]
+  publisher: CVPR
+  date: 2017
 eigen:
-    type: Article
-    title: Depth Map Prediction from a Single Image using a Multi-Scale Deep Network
-    author: ['David, Eigen', 'Christian, Puhrsch', 'Rob, Fergus']
-    publisher: Advances in neural information processing systems
-    page: 2366-2374
-    date: 2014
+  type: Article
+  title: Depth Map Prediction from a Single Image using a Multi-Scale Deep Network
+  author: ["David, Eigen", "Christian, Puhrsch", "Rob, Fergus"]
+  publisher: Advances in neural information processing systems
+  page: 2366-2374
+  date: 2014
 xinet:
-    type: Article
-    title: 'XiNet: Efficient Neural Networks for tinyML'
-    author: ['Alberto, Ancilotto', 'Francesco, Paissan', 'Elisabetta, Farella']
-    publisher: ICCV
-    date: 2023
+  type: Article
+  title: "XiNet: Efficient Neural Networks for tinyML"
+  author: ["Alberto, Ancilotto", "Francesco, Paissan", "Elisabetta, Farella"]
+  publisher: ICCV
+  date: 2023
 sa:
-    type: Article
-    title: Non-local Neural Networks
-    author: ['Xiaolong Wang', 'Ross Girshick', 'Abhinav Gupta', 'Kaiming He']
-    publisher: CVPR
-    date: 2018
+  type: Article
+  title: Non-local Neural Networks
+  author: ["Xiaolong Wang", "Ross Girshick", "Abhinav Gupta", "Kaiming He"]
+  publisher: CVPR
+  date: 2018
 CBAM:
-    type: Article
-    title: 'CBAM: Convolutional Block Attention Module'
-    author: ['Sanghyun Woo', 'Jongchan Park', 'Joon-Young Lee', 'In So Kweon']
-    publisher: ECCV
-    date: 2018
+  type: Article
+  title: "CBAM: Convolutional Block Attention Module"
+  author: ["Sanghyun Woo", "Jongchan Park", "Joon-Young Lee", "In So Kweon"]
+  publisher: ECCV
+  date: 2018
 topcifar:
-    type: Article
-    title: Efficient Adaptive Ensembling for Image Classification
-    author: ['Antonio, Bruno', 'Davide, Moroni', 'Massimo, Martinelli']
-    publisher: Expert Systems, Wiley
-    date: 2023
+  type: Article
+  title: Efficient Adaptive Ensembling for Image Classification
+  author: ["Antonio, Bruno", "Davide, Moroni", "Massimo, Martinelli"]
+  publisher: Expert Systems, Wiley
+  date: 2023
 layernorm:
-    type: Article
-    title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale'
-    author:
-        [
-            'Alexey, Dosovitskiy',
-            'Lucas, Beyer',
-            'Alexander, Kolesnikov',
-            'Dirk, Weissenborn',
-            'Xiaohua, Zhai',
-            'Thomas, Unterthiner',
-            'Mostafa, Dehghani',
-            'Matthias, Minderer',
-            'Georg, Heigold',
-            'Sylvain, Gelly',
-            'Jakob, Uszkoreit',
-            'Neil, Houlsby',
-        ]
-    publisher: ICLR
-    date: 2021
+  type: Article
+  title: "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
+  author:
+    [
+      "Alexey, Dosovitskiy",
+      "Lucas, Beyer",
+      "Alexander, Kolesnikov",
+      "Dirk, Weissenborn",
+      "Xiaohua, Zhai",
+      "Thomas, Unterthiner",
+      "Mostafa, Dehghani",
+      "Matthias, Minderer",
+      "Georg, Heigold",
+      "Sylvain, Gelly",
+      "Jakob, Uszkoreit",
+      "Neil, Houlsby",
+    ]
+  publisher: ICLR
+  date: 2021
 aiayn:
-    type: Article
-    title: Attention Is All You Need
-    author:
-        [
-            'Ashish, Vaswani',
-            'Noam, Shazeer',
-            'Niki, Parmar',
-            'Jakob, Uszkoreit',
-            'Llion, Jones',
-            'Aidan, N. Gomez',
-            'Lukasz, Kaiser',
-            'Illia, Polosukhin',
-        ]
-    publisher: NeurIPS
-    date: 2017
+  type: Article
+  title: Attention Is All You Need
+  author:
+    [
+      "Ashish, Vaswani",
+      "Noam, Shazeer",
+      "Niki, Parmar",
+      "Jakob, Uszkoreit",
+      "Llion, Jones",
+      "Aidan, N. Gomez",
+      "Lukasz, Kaiser",
+      "Illia, Polosukhin",
+    ]
+  publisher: NeurIPS
+  date: 2017
 resnet:
-    type: Article
-    title: Deep Residual Learning for Image Recognition
-    author: ['Kaiming, He', 'Xiangyu, Zhang', 'Shaoqing, Ren', 'Jian, Sun']
-    publisher: CVPR
-    date: 2016
+  type: Article
+  title: Deep Residual Learning for Image Recognition
+  author: ["Kaiming, He", "Xiangyu, Zhang", "Shaoqing, Ren", "Jian, Sun"]
+  publisher: CVPR
+  date: 2016

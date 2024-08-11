@@ -8,9 +8,7 @@
 // Mainmatter
 
 #counter(page).update(1)
-#show link: set text(fill: blue.darken(60%), weight: "semibold")
-#show par: set block(spacing: 1.25em)
-#set par(leading: 0.75em)
+#show link: set text(fill: blue.darken(70%), weight: "medium")
 
 #include "./chapters/introduction.typ"
 #include "./chapters/pydnet.typ"
