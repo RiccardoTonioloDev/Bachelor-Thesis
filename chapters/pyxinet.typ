@@ -2,7 +2,7 @@
 #import "../config/functions.typ": *
 = PyXiNet <ch:pyxinet>
 
-PyXiNet (*Py*\ramidal *Xi* *Net*\work) è una famiglia di modelli che tenta esplorando le diverse soluzioni trattate fino ad ora, di combinarle per massimizzare l'efficacia e l'efficienza nel portare a termine il compito di @MDE.
+PyXiNet (*Py*\ramidal *Xi* *Net*\work) è una famiglia di modelli che tenta di combinare le diverse soluzioni trattate fino ad ora per massimizzare l'efficacia e l'efficienza nel portare a termine il compito di @MDE.
 
 
 
@@ -21,7 +21,7 @@ Le architetture create sono le seguenti:
 ],breakable: false,width: 100%)
 #figure(image("../images/architectures/PyXiNet-a2.drawio.png",width:350pt),caption: [Architettura di PyXiNet $alpha" II"$])
 
-Si può notare che dopo l'uso di ogni XiNet, è presente una convoluzione trasposta, questo perchè come già discusso nel capitolo #link(<ch:xinet>)[XiNet], l'uso di tale rete fa una riduzione della dimensionalità spaziale (altezza e larghezza) all'inizio, e poi ne fa una per ogni coppia all'interno della rete.
+Si può notare che dopo l'uso di ogni XiNet, è presente una convoluzione trasposta, questo perchè come già discusso nel capitolo #link(<ch:xinet>)[XiNet], l'uso di tale rete effettua una riduzione della dimensionalità spaziale (altezza e larghezza) all'inizio, e poi ne fa una per ogni coppia all'interno della rete.
 
 La convoluzione trasposta serve per far si che la dimensionalità spaziale sia la medesima che avrebbe prodotto l'@encoder originale di PDV1.
 Anche in questo caso, come per PDV1, la convoluzione trasposta è seguita da una funzione di attivazione _ReLU_, con coefficiente di crescita di 0,2 per la parte negativa.
@@ -103,12 +103,12 @@ Con le architetture precedentemente discusse ho ottenuto i seguenti risultati:
 ],breakable: false,width: 100%)
 
 In questo caso i risultati migliorano su tutte le metriche per i modelli $beta" III"$ e $beta" IV"$, tranne per il tempo di inferenza e per il numero di parametri.
-Tuttavia notiamo che sebbene il numero di parametri di $beta" III"$ non è minore di quelli di PDV2, sono di un $tilde 37%$ inferiori a quelli di PDV1 e il tempo di inferenza di questi due modelli è molto simile.
+Tuttavia notiamo che sebbene il numero di parametri di $beta" III"$ non è minore di quello di PDV2, è di un $tilde 37%$ inferiore a quello di PDV1 e il tempo di inferenza di questi due modelli è molto simile.
 Questo è quindi un buon punto di partenza per poter applicare meccanismi di attenzione, in grado di migliorare ulteriormente le prestazioni del modello.
 
 #block([
 == PyXiNet *$MM$*
-Essendo coscienti che la _self attention_ è parecchio costosa in termini di tempo e quindi un'opzione non praticabile in contesti dove il tempo di inferenza deve essere corto e la potenza computazionale limitata, la famiglia $MM$ va in realtà semplicemente a provare e verificare quale valore aggiunto questo meccanismo di atttenzione può portare nel miglioramento delle metriche di valutazione, senza avere alcune pretese sul poter essere applicata come soluzione per il caso d'uso @MDE _embedded_.
+Essendo coscienti che la _self attention_ è parecchio costosa in termini di tempo e quindi un'opzione non praticabile in contesti dove il tempo di inferenza deve essere corto e la potenza computazionale limitata, la famiglia $MM$ va in realtà semplicemente a provare e verificare quale valore aggiunto questo meccanismo di attenzione può portare nel miglioramento delle metriche di valutazione, senza avere alcune pretese sul poter essere applicata come soluzione per il caso d'uso @MDE _embedded_.
 ],breakable: false,width: 100%)
 
 Nel tenativo di implementazione di una _self attention_ meno impattante computazionalmente, rispetto al normale modulo di attenzione presentato in @sa e affrontato nella @sa:ch, ho realizzato un blocco chiamato _Light Self Attetion Module_ (LSAM) che rispetto al _Self Attention Module_ (SAM) discusso precedentemente, applica dell'interpolazione ad _area_ per ridimensionare la risoluzione del tensore in ingresso.
@@ -193,8 +193,8 @@ I risultati di questi due modelli sono riportati nella seguente tabella:
   (
     (name: [PDV1], vals: (1971624.0,0.15,0.16,1.52,6.229,0.253,0.782,0.916,0.964)),
     (name: [PDV2], vals: (716680.0,0.10,0.157,1.487,6.167,0.254,0.783,0.917,0.964)),
-    (name: [PyXiNet $beta" CBAM I"$],vals:(1250797.0,0.19,0.143,1.296,5.91,0.239,0.805,0.928,0.968)),
-    (name: [PyXiNet $beta" CBAM II"$],vals:(1450389.0,0.23,0.147,1.379,5.974,0.239,0.806,0.927,0.968)),
+    (name: [PyXiNet $beta"CBAM I"$],vals:(1250797.0,0.19,0.143,1.296,5.91,0.239,0.805,0.928,0.968)),
+    (name: [PyXiNet $beta"CBAM II"$],vals:(1450389.0,0.23,0.147,1.379,5.974,0.239,0.806,0.927,0.968)),
   ),
   2,
   [PDV1 e PDV2 vs. PyXiNet $beta$CBAM],
@@ -205,7 +205,7 @@ I risultati di questi due modelli sono riportati nella seguente tabella:
 I risultati di questa famiglia di modelli come si può notare sono molto promettenti, riuscendo ad incrementare notevolmente le _performance_ del modello di partenza, senza impattare troppo fortemente sul tempo di inferenza.
 
 
-Il modello migliore tra i due, $beta" CBAM I"$ riesce addirittura a stare sotto i 0.20s come tempo di inferenza medio (permettendo un _framerate_ di circa 5 _fps_) e con un numero di parametri inferiore di un $tilde 37%$ rispetto a PDV1.
+Il modello migliore tra i due ($beta"CBAM I"$) riesce addirittura a stare sotto i 0.20s come tempo di inferenza medio (permettendo un _framerate_ di circa 5 _fps_) e con un numero di parametri inferiore di un $tilde 37%$ rispetto a PDV1.
 
 
 Un'osservazione interessante che può essere fatta è che rispetto alle controparti della famiglia $beta$, l'aggiunta dei vari blocchi CBAM ha contribuito al massimo ad un incremento del $tilde 0,4%$ sul numero dei parametri.
@@ -232,11 +232,11 @@ I risultati di questo modello sono riportati in seguito:
   (
     (name: [PDV1], vals: (1971624.0,0.15,0.16,1.52,6.229,0.253,0.782,0.916,0.964)),
     (name: [PDV2], vals: (716680.0,0.10,0.157,1.487,6.167,0.254,0.783,0.917,0.964)),
-    (name: [_CBAM PyDNet_],vals:(746673.0,0.28,0.167,1.722,6.509,0.251,0.776,0.916,0.965)),
+    (name: [CBAM PyDNet],vals:(746673.0,0.28,0.167,1.722,6.509,0.251,0.776,0.916,0.965)),
   ),
   2,
   [PDV1 e PDV2 vs. _CBAM PyDNet_],
   res: 102pt
 )
 ],breakable: false,width: 100%)
-Per quanto si può notare, posizionare il blocco CBAM dopo ogni convoluzione non fa altro che degradare pesantemente le prestazioni del modello sulla maggior parte delle metriche di valutazione. Si deduce quindi che l'uso di XiNet è sicuramente responsabile per parte del miglioramento delle predizioni dei modelli dove è stato usato..
+Per quanto si può notare, posizionare il blocco CBAM dopo ogni convoluzione non fa altro che degradare pesantemente le prestazioni del modello sulla maggior parte delle metriche di valutazione. Si deduce quindi che l'uso di XiNet è sicuramente responsabile per parte del miglioramento delle predizioni dei modelli dove è stato usato.

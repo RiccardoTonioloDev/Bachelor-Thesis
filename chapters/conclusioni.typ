@@ -1,7 +1,7 @@
 #pagebreak(to: "odd")
 = Conclusioni <ch:conclusioni>
 == Raggiungimento obbiettivi
-Si riassumono in seguiti gli obbiettivi raggiunti durante il tirocinio:
+Si riassumono in seguito gli obbiettivi raggiunti durante il tirocinio:
 - Il modello PyDNet V1 è stato verificato nei risultati enunciati dal proprio _paper_ @PyDNetV1;
 - È stata migrata l'intera _codebase_ di PyDNet V1 e il modello di PyDNet V2 dal framework @Tensorflow al framework @PyTorch con successo:
   - Sono stati ottenuti gli stessi risultati nell'allenamento a 50 epoche sul _dataset_ KITTI;

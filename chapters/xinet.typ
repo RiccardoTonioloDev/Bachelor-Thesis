@@ -1,6 +1,6 @@
 #pagebreak(to: "odd")
 = XiNet <ch:xinet>
-Il seguente capitolo parla di XiNet @xinet, una rete neurale convoluzionale profonda parametrizzata orientata all'efficienza energetica per compiti relativi alla _computer vision_.
+Il seguente capitolo parla di XiNet @xinet, una rete neurale convoluzionale profonda, parametrizzata, orientata all'efficienza energetica per compiti relativi alla _computer vision_.
 Il _paper_ tratta in primo luogo lo XiConv ovvero un blocco convoluzionale parametrizzato che combina tecniche alternative per riuscire a migliorare l'efficienza energetica, rispetto ad una tradizionale convoluzione, e in secondo luogo XiNet ovvero una rete neurale che combina gli XiConv per riuscire ad ottenere il massimo dei risultati.
 
 Di conseguenza nelle seguenti sezioni verranno trattati:
@@ -37,7 +37,7 @@ La rete XiNet è invece detta parametrica in quando sono in essa impostabili i s
    - $N$: il numero di XiConv utilizzati nella rete.
 
 #block([
-L'architettura è quindi la seguente:
+L'architettura della rete è quindi la seguente:
 #figure(image("../images/architectures/XiNet.drawio.png",width:250pt),caption: [Architettura di XiNet, composta da $N$ XiConv])
 ],breakable: false,width: 100%)
 
@@ -66,8 +66,7 @@ Si è voluto quindi verificare il risultato andando a svolgere i seguenti passi:
  cd ./recipes/image_classification/
  # Per eseguire l'allenamento con successiva valutazione
  python train.py cfg/xinet.py
- ```
- ])
+ ```],breakable: false,width: 100%)
  Seguendo i precedenti comandi ho quindi ottenuto un' _accuracy_ del 81.44% con $tilde$7.8 milioni di parametri.
  Il modello presentato in @topcifar è in cima alle classifiche con un'_accuracy_ del 99.61% con 11 milioni di parametri.
 

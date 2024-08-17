@@ -5,7 +5,7 @@
 PyDNet (*Py*\ramidal *D*\epth *Net*\work) è una famiglia di modelli composta da due versioni @PyDNetV1@PyDNetV2 (che per comodità verranno riferite come PDV1 e PDV2), che cercano di risolvere il problema della @MDE mediante un approccio non supervisionato, con circa 2 milioni di parametri in PDV1 e circa 700.000 in PDV2.
 
 Una loro caratteristica interessante infatti, per l'applicazione in sistemi di tipo @embedded, è proprio il numero di parametri estremamente basso.
-L'obbiettivo di questi modelli infatti, è quello di essere abbastanza leggeri da poter essere direttamente eseguiti su un processore, senza il supporto di una scheda grafica, per poter essere integrati in sistemi di questo tipo, come ad esempio nei cellulari @MDEInWild.
+L'obbiettivo di questi modelli infatti, è quello di essere abbastanza leggeri da poter essere direttamente eseguiti su un processore, senza il supporto di una scheda grafica, come ad esempio nei cellulari @MDEInWild.
 
 Questa loro caratteristica li rende molto interessanti come punto di partenza per sperimentare con tecniche innovative o apportare modifiche ai loro blocchi, di modo da migliorarne le prestazioni.
 
@@ -50,7 +50,7 @@ Il @decoder invece è composto da una successione di quattro convoluzioni con @k
 #block([L'architettura del @decoder è quindi la seguente:
 #figure(
   image("../images/architectures/PyDNetV1-decoder.drawio.png",width: 250pt),
-  caption: [#link(<decoder>)[Decoder] del modello @PyDNetV1.]
+  caption: [#link(<decoder>)[Decoder] del modello PDV1.]
 )
 ],breakable: false,width: 100%)
 
@@ -129,7 +129,7 @@ Il codice si basava anche su una versione deprecata del pacchetto `scipy`, facil
 
 L'ultima configurazione necessaria per eseguire il codice è la corretta versione di @Python, ancora scaricabile e che riesca ad essere compatibile con tutti i pacchetti sopra menzionati e con le relative dipendenze. Grazie ad @Anaconda è possibile scaricare la versione `3.7` che è utilizzabile per questo scopo.
 
-#block([I comandi da terminale per ottenere la seguente configurazione, previa corretta installazione di @pip e @Anaconda sono:
+#block([I comandi da terminale per ottenere la configurazione citata, previa corretta installazione di @pip e @Anaconda sono:
 #codly(languages: (
   bash: (name: "Bash", color: gray)
 ),number-format: none, zebra-fill: none)
@@ -238,7 +238,7 @@ Questa procedura mostrerà a terminale i valori calcolati per ciascuna metrica d
     (name: [PDV1 ri-allenato], vals: (0.164,1.427,6.369,0.266,0.757,0.908,0.960))
   ),
   1,
-  [@PyDNetV1 vs. @PyDNetV1 ri-allenato]
+  [PDV1 vs. PDV1 ri-allenato]
 )
 ],breakable: false,width: 100%)
 
@@ -267,7 +267,6 @@ Inoltre, grazie alle _API_ di _Pandas_ è molto facile reperire la dimensione de
 Appoggiandomi poi alla libreria _Pillow_ (standard di lettura efficiente delle immagini nell'ecosistema @Python) e @PyTorch, mi sono occupato della lettura delle immagini selezionate mediante _Pandas_, della succesiva loro conversione in tensori e dell'applicazione di un eventuale _data augmentation_ da applicare a questi, prima che vengano restituiti dal metodo `__getitem__`.
 Il `Dataset` è stato creato in modo da far restituire una tupla di tensori $(T_"sx",T_"dx")$ se questo è in modalità _training_ altirmenti, se in modalità _testing_, resitituirà solo il tensore di sinistra $T_"sx"$.
 
-#linebreak()
 
 Ho implementato infine un metodo di utilità che a partire dal `Dataset` genera un `DataLoader`, il quale sarà il diretto usufruitore del primo per fornire alla procedura di addestramento i corretti _batch_ di immagini.
 
@@ -281,9 +280,9 @@ I modelli di PDV1 e PDV2 sono stati ricreati con una corrispondenza 1:1 rispetto
  - Creare sequenze di blocchi o _layer_, mediante l'impiego di oggetti `torch.nn.Sequential`, per poter rendere il codice più semplice e sequenziale, migliorandone la leggibilità.
 
 #block([=== La configurazione
-Il codice originale fa un forte uso degli argomenti da terminale per definire le varie impostazioni di esecuzione del programma, mentre il codice migrato invece fa uso di _file_ di configurazione scritti in @Python, così da poter specificare anche i tipi delle varie impostazioni inseribili e da poter sfruttare il @linter di @Python per avere suggerimenti riguardo alle impostazioni durante la scrittura del codice.
+Il codice originale fa un forte uso degli argomenti da terminale per definire le varie impostazioni di esecuzione del programma, mentre il codice migrato fa uso di _file_ di configurazione scritti in @Python, così da poter specificare anche i tipi delle varie impostazioni inseribili e da poter sfruttare il @linter di @Python per avere suggerimenti riguardo alle impostazioni durante la scrittura del codice.
 ],breakable: false,width: 100%)
-Nel mio caso ho scritto un _file_ di configurazione `ConfigHomeLab.py` per la configurazione del programma di modo da poter eseguire sul mio computer di casa, e un _file_ di configurazione `ConfigCluster.py` per poterlo invece eseguire sul cluster di dipartimento.
+Nel mio caso ho scritto un _file_ di configurazione `ConfigHomeLab.py` per la configurazione del programma di modo da poterlo eseguire sul mio computer di casa, e un _file_ di configurazione `ConfigCluster.py` per poterlo invece eseguire sul cluster di dipartimento.
 
 #block([Di conseguenza le fasi di #link(<training>)[_training_], #link(<utilizzo>)[utilizzo] e #link(<valutazione>)[valutazione] hanno tutte bisogno di due argomenti da terminale:
  - `--mode`: che serve a specificare la modalità di esecuzione del codice (se per l'allenamento, utilizzo o valutazione);
@@ -310,7 +309,7 @@ Tutto il codice per l'utilizzo è stato realizzato dentro un _file_ apposito `us
 ],breakable: false,width: 100%)
  - Se si desidera utilizzare il modello attraverso la _webcam_ integrata del computer, si deve impostare `--mode=webcam`. Bisogna tuttavia assicurarsi di avere il comando `ffmpeg` disponibile mediante terminale.
 
-Inoltre, nel caso in cui si voglia integrare il modello in un'altro programma, è stata creata la funzione `use()` la quale, una volta forniti come parametri: il modello da utilizzare, l'immagine sotto forma di immagine _Pillow_ o tensore di @PyTorch, le dimensioni delle immagini accettate dal modello, le dimensioni originali dell'immagine e il dispositivo sulla quale si vuole eseguire il modello (`cuda` o `cpu`), restituisce in _output_ un tensore di @PyTorch, rappresentante la mappa delle @disparità.
+Inoltre, nel caso in cui si voglia integrare il modello in un'altro programma, è stata creata la funzione `use()` la quale, una volta forniti come parametri: il modello da utilizzare, l'immagine sotto forma di immagine _Pillow_ o tensore di @PyTorch, le dimensioni delle immagini accettate dal modello, le dimensioni originali dell'immagine e il dispositivo sulla quale si vuole eseguire il modello (`cuda` o `cpu`), restituisce in _output_ un tensore di @PyTorch, rappresentante la mappa delle @disparità corrispondente.
 
 #block([=== La procedura di valutazione <valutazione>
 Tutto il codice per la valutazione e per il _testing_ è stato realizzato dentro i corrispondenti _file_ `evaluating.py` e `testing.py`, i quale vengono eventualmente richiamati dal _file_ `main.py`.
@@ -413,7 +412,7 @@ Sono quindi state analizzate le seguenti situazioni date le seguenti ipotesi:
 )
 ],breakable: false,width: 100%)
 Come si può vedere, i risultati peggiorano, questo a significare che avere effettivamente i canali dei colori introduceva informazione significativa.
-#block([- Cosa succede se il _dataset_ è in formato HSV? Il formato _HSV_ è un formato di rappresentazione dei colori che si appoggia sempre su tre canali, ma rispetto alla rappresentazione _RGB_, i tre in questo caso sono usati per rappresentare tonalità, saturazione e luminosità. Si cerca quindi di capire se un'altra rappresentazione dei colori possa portare beneficio alle _performance_ del modello. I risultati sono i seguenti:
+#block([- Cosa succede se il _dataset_ è in formato _HSV_? Il formato _HSV_ è un formato di rappresentazione dei colori che si appoggia sempre su tre canali, ma rispetto alla rappresentazione _RGB_, i tre in questo caso sono usati per rappresentare tonalità, saturazione e luminosità. Si cerca quindi di capire se un'altra rappresentazione dei colori possa portare beneficio alle _performance_ del modello. I risultati sono i seguenti:
 #eval_table(
   (
     (name: [PDV1], vals: (0.16,1.52,6.229,0.253,0.782,0.916,0.964)),
@@ -449,7 +448,7 @@ Si nota che, sebbene le prime due metriche di valutazione sono leggermente migli
 ],breakable: false,width: 100%)
 Si può quindi notare che mettere il modello in condizioni poco probabili, non lo aiuta a generalizzare meglio, ma introduce solo più confusione.
 
-#block([- Cosa succede al cambiare della dimensione delle immagini di _input_? Si vuole in questo caso verificare come, gradualmente aumentando la dimensione delle immagini sulla quale il modello viene addestrato, si modificano le metriche di valutazione per il modello. Sono riportati in seguito i risultati per ciascuna risoluzione di _input_ provata:
+#block([- Cosa succede al cambiare della dimensione delle immagini di _input_? Si vuole in questo caso verificare come gradualmente aumentando la dimensione delle immagini, sulla quale il modello viene addestrato, si modificano le metriche di valutazione per il modello. Sono riportati in seguito i risultati per ciascuna risoluzione di _input_ provata:
 
 #eval_table(
   (

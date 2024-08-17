@@ -51,4 +51,5 @@ La presente tesi è organizzata come segue:
   - #link(<ch:xinet>)[Il terzo capitolo]: descrive l'architettura, il funzionamento e la validazione di XiNet, una rete neurale convoluzionale parametrica creata per essere particolarmente efficiente in termini di consumo energetico.
   - #link(<ch:attention>)[Il quarto capitolo]: descrive l'architettura, il funzionamento e i casi d'uso di meccanismi di attenzione quali la _self attention_ e i _convolutional block attention module_ nell'ambito della _computer vision_.
   - #link(<ch:pyxinet>)[Il quinto capitolo]: descrive l'approccio esplorativo nella costruzione di PyXiNet, investigando vari tipi di architetture, progettate mediante iterazioni successive basate sui risultati delle precedenti, al fine di trovare una miglior alternativa a PyDNet.
-  - #link(<ch:conclusioni>)[Il sesto capitolo]: descrive i traguardi raggiunti e le conclusioni deducibili.
+  - #link(<ch:risultati>)[Il sesto capitolo]: analizza i risultati ottenuti dai vari modelli di PyXiNet, sia dal punto di vista quantitativo che qualitativo;
+  - #link(<ch:conclusioni>)[Il settimo capitolo]: descrive i traguardi raggiunti e le conclusioni deducibili.
