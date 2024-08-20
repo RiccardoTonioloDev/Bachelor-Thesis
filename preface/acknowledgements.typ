@@ -27,7 +27,7 @@ text(style: "italic", "Ti ringrazio di cuore Elena, per essere stata un preziosi
 
 linebreak()
 
-text(style: "italic", "Ringrazio profondamente la mia famiglia, il cui supporto è stato inestimabile, per avermi sostenuto e supportato in ogni mia scelta.")
+text(style: "italic", "Ringrazio profondamente la mia famiglia, il cui supporto è stato inestimabile, per avermi sostenuto in ogni mia scelta.")
 
 linebreak()
 
@@ -49,4 +49,4 @@ v(1fr)
 
 }
 
-//#acknowledgements_content()
+#acknowledgements_content()
