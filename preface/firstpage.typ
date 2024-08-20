@@ -28,9 +28,19 @@
         #v(40pt)
 
         // Relatore e laureando
-        #align(left, text(12pt, weight: 400, style: "italic", supervisor))
-        #v(5pt)
-        #align(left, text(11pt, profTitle + myProf))
+        #stack(dir:ltr,
+          align(left)[
+            #text(12pt, weight: 400, style: "italic", supervisor)
+
+            #text(11pt, profTitle + myProf)
+          ],
+          h(20pt),
+          align(left)[
+            #text(12pt, weight: 400, style: "italic", "Co-relatore")
+
+            #text(11pt, "Dott. Elena Izzo")
+          ]
+        )
 
         #align(right, text(12pt, weight: 400, style: "italic", undergraduate))
         #v(5pt)
