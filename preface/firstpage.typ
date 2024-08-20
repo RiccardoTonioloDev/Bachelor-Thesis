@@ -36,7 +36,7 @@
           ],
           h(20pt),
           align(left)[
-            #text(12pt, weight: 400, style: "italic", "Co-relatore")
+            #text(12pt, weight: 400, style: "italic", "Correlatrice")
 
             #text(11pt, "Dott. Elena Izzo")
           ]
