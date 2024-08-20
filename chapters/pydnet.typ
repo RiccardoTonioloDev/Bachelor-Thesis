@@ -107,7 +107,7 @@ $ cal(L)_"s" = alpha_"ap" (cal(L)^l_"ap"+cal(L)^r_"ap") + alpha_"ds" (cal(L)^l_"
 Per l'allenamento viene utilizzato l'ottimizzatore @adam con i seguenti parametri: $beta_1=0.9$, $beta_2=0.999$ e $epsilon=10^(-8)$.
 ],breakable: false,width: 100%)
 
-Il _learning rate_ parte da $10^-4$ per il primo 60% delle epoche, e viene dimezzato ogni 20% successivo.
+Il _learning rate_ parte da $10^(-4)$ per il primo 60% delle epoche, e viene dimezzato ogni 20% successivo.
 
 #block([Infine vengono applicate, con una probabilità del 50%, le seguenti _data augmentation_:
  - Capovolgimento orizontale delle immagini;
