@@ -28,25 +28,29 @@
         #v(40pt)
 
         // Relatore e laureando
-        #stack(dir:ltr,
+        #stack(dir: ttb,
           align(left)[
             #text(12pt, weight: 400, style: "italic", supervisor)
 
             #text(11pt, profTitle + myProf)
           ],
-          h(20pt),
-          align(left)[
-            #text(12pt, weight: 400, style: "italic", "Correlatrice")
+          v(20pt),
+          stack(dir: ltr,
+            align(left)[
+              #text(12pt, weight: 400, style: "italic", "Correlatrice")
 
-            #text(11pt, "Dott. Elena Izzo")
-          ]
+              #text(11pt, "Dott.ssa Elena Izzo")
+            ],
+            align(right)[
+              #align(right, text(12pt, weight: 400, style: "italic", undergraduate))
+              #v(5pt)
+              #align(right, text(11pt, myName))
+              #v(5pt)
+              #align(right, text(11pt, [_ #ID _ ] + myMatricola))
+            ]
+          )
         )
 
-        #align(right, text(12pt, weight: 400, style: "italic", undergraduate))
-        #v(5pt)
-        #align(right, text(11pt, myName))
-        #v(5pt)
-        #align(right, text(11pt, [_ #ID _ ] + myMatricola))
         #v(30pt)
     ],
     // Piè di pagina

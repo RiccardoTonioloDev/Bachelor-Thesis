@@ -366,7 +366,7 @@ python3 main.py --mode=eval --env=<configurazioneUsata>
     (name: [PDV1 in @PyTorch], vals: (0.16,1.52,6.229,0.253,0.782,0.916,0.964))
   ),
   1,
-  [PDV1 vs. PDV1 riscritto in @PyTorch (_training_ su _KITTI_, 50 epoche)]
+  [PDV1 vs. PDV1 in @PyTorch (_training_ su _KITTI_, 50 epoche)]
 )
 ],breakable: false,width: 100%)
 
@@ -377,7 +377,7 @@ python3 main.py --mode=eval --env=<configurazioneUsata>
     (name: [PDV1 in @PyTorch], vals: (0.147,1.378,5.91,0.242,0.804,0.927,0.967))
   ),
   1,
-  [PDV1 vs. PDV1 riscritto in @PyTorch (_training_ su _CityScapes_+_KITTI_, 50 epoche)]
+  [PDV1 vs. PDV1 in @PyTorch (_training_ su _CityScapes_+_KITTI_, 50 epoche)]
 )
 ],breakable: false,width: 100%)
 
@@ -388,7 +388,7 @@ python3 main.py --mode=eval --env=<configurazioneUsata>
     (name: [PDV1 in @PyTorch], vals: (0.153,1.473,6.23,0.251,0.789,0.918,0.964)),
   ),
   1,
-  [PDV1 vs. PDV1 riscritto in @PyTorch (_training_ su _KITTI_, 200 epoche)]
+  [PDV1 vs. PDV1 in @PyTorch (_training_ su _KITTI_, 200 epoche)]
 )
 ],breakable: false,width: 100%)
 Si può quindi constatare che la migrazione a @PyTorch è stata un successo, permettendoci di arrivare nell'intorno dei risultati enunciati in @PyDNetV1, in tutti gli esperimenti proposti.
